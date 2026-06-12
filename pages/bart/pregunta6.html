@@ -7,9 +7,10 @@
     <title>The Simpsons: Trivia Amarilla</title>
 
     <link rel="stylesheet" href="../../estilos/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
-<body>
+<body data-personaje="bart">
 
     <div class="FondoBart">
         <img src="../../assets/TRIVIA AMARILLA/6 - JUEGO HOMERO/1 - Fondo/6 - Fondo Bart.jpg" class="FondoBart">
@@ -17,73 +18,81 @@
 
     <!-- Pregunta -->
     <div class="pregunta" id="pregunta">
-        ¿Quién descubre primero que Bart hizo trampa en el examen de historia cuando intenta pasar de curso?
+        ¿Quién descubre primero que Bart hizo trampa en el examen de historia cuando intenta pasar de curso?</div>
+    <div class="panelResultado" id="panelResultado">
 
-        <!-- Opciones -->
-        <div class="opciones">
+        <img id="gifResultado" class="gifResultado" src="" alt="" height="200px">
 
-            <button class="btnOpcion" data-correcta="true">
-                Edna Krabappel
-            </button>
-
-            <button class="btnOpcion" data-correcta="false">
-                Martin Prince
-            </button>
-
-            <button class="btnOpcion" data-correcta="false">
-                Lisa Simpson
-            </button>
-
-            <button class="btnOpcion" data-correcta="false">
-                Seymour Skinner
-            </button>
-
+        <div id="textoResultado" class="textoResultado">
         </div>
 
-        <!-- Contenedor GIF -->
-        <div id="resultado" style="display:none;">
-            <img id="gifResultado" src="" alt="">
-        </div>
+    </div>
 
-        <!-- Vidas -->
-       <div class="contenedorJuego">
 
-    <div class="vidas" id="vidas"></div>
+    <!-- Opciones -->
+    <div class="opciones">
 
-    <a id="btnSiguiente" href="#">
-        <button class="btnInferior siguienteBtn">
-            SIGUIENTE ➜
+        <button class="btnOpcion" data-correcta="true">
+            Edna Krabappel
         </button>
-    </a>
 
-</div>
+        <button class="btnOpcion" data-correcta="false">
+            Martin Prince
+        </button>
+
+        <button class="btnOpcion" data-correcta="false">
+            Lisa Simpson
+        </button>
+
+        <button class="btnOpcion" data-correcta="false">
+            Seymour Skinner
+        </button>
+
+    </div>
+
+
+
+    <!-- Vidas -->
+    <div class="contenedorJuego">
+
+        <div class="vidas" id="vidas"></div>
 
         <a id="btnSiguiente" href="#">
             <button class="btnInferior siguienteBtn">
                 SIGUIENTE ➜
             </button>
         </a>
-        <!-- Barra inferior -->
-        <div class="barraInferiorPregunta">
 
-            <a href="index.html">
-                <button class="btnInferior">
-                    ↩
-                </button>
-            </a>
+    </div>
 
-            <div class="contadorVisitas">
-                <span id="contador">0000</span>
-            </div>
+    <a id="btnSiguiente" href="#">
+        <button class="btnInferior siguienteBtn">
+            SIGUIENTE ➜
+        </button>
+    </a>
+    <!-- Barra inferior -->
+    <div class="barraInferiorPregunta">
 
-            <button class="btnInferior" id="btnSonido">
-                🔇
+        <a href="index.html">
+            <button class="btnInferior">
+                <i class="fa-solid fa-house"></i>
             </button>
+        </a>
 
+        <div class="contadorVisitas">
+            <span id="contador">0000</span>
         </div>
 
-        <script src="../../app.js"></script>
+        <button class="btnInferior" id="btnSonido">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
 
+
+
+    </div>
+
+    <script src="../../app.js"></script>
+    </div>
 </body>
 
 </html>

@@ -7,9 +7,10 @@
     <title>The Simpsons: Trivia Amarilla</title>
 
     <link rel="stylesheet" href="../../estilos/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
-<body>
+<body data-personaje="bart">
 
     <div class="FondoBart">
         <img src="../../assets/TRIVIA AMARILLA/6 - JUEGO HOMERO/1 - Fondo/6 - Fondo Bart.jpg" class="FondoBart">
@@ -19,7 +20,14 @@
     <div class="pregunta" id="pregunta">
         ¿Cómo se llama el elefante que Bart gana en un concurso de radio?
     </div>
+    <div class="panelResultado" id="panelResultado">
 
+        <img id="gifResultado" class="gifResultado" src="" alt="" height="200px">
+
+        <div id="textoResultado" class="textoResultado">
+        </div>
+
+    </div>
     <!-- Opciones -->
     <div class="opciones">
 
@@ -41,23 +49,18 @@
 
     </div>
 
-    <!-- Contenedor GIF -->
-    <div id="resultado" style="display:none;">
-        <img id="gifResultado" src="" alt="">
-    </div>
-
     <!-- Vidas -->
-   <div class="contenedorJuego">
+    <div class="contenedorJuego">
 
-    <div class="vidas" id="vidas"></div>
+        <div class="vidas" id="vidas"></div>
 
-    <a id="btnSiguiente" href="#">
-        <button class="btnInferior siguienteBtn">
-            SIGUIENTE ➜
-        </button>
-    </a>
+        <a id="btnSiguiente" href="#">
+            <button class="btnInferior siguienteBtn">
+                SIGUIENTE ➜
+            </button>
+        </a>
 
-</div>
+    </div>
 
     <a id="btnSiguiente" href="#">
         <button class="btnInferior siguienteBtn">
@@ -69,7 +72,7 @@
 
         <a href="index.html">
             <button class="btnInferior">
-                ↩
+                <i class="fa-solid fa-house"></i>
             </button>
         </a>
 
@@ -78,7 +81,7 @@
         </div>
 
         <button class="btnInferior" id="btnSonido">
-            🔇
+            <i class="fa-solid fa-volume-high"></i>
         </button>
 
 

@@ -1,0 +1,250 @@
+/* ==================== SERIE ==================== */
+
+/* Fondo */
+.fondoSerie {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* ==================== BURBUJAS ==================== */
+
+.burbuja {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    z-index: 2;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.burbuja:hover {
+    transform: scale(1.05);
+}
+
+/* Ícono dona circular a la izquierda */
+.burbujaIcono {
+    width: 10rem;
+    height: 10rem;
+    flex-shrink: 0;
+    z-index: 1;
+    position: relative;
+}
+
+.burbujaIcono img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Caja de texto de la burbuja */
+.burbujaTexto {
+    background: #007f7f;
+
+    border: 5px solid #000;
+    border-radius: 20px;
+
+    padding: 12px 18px;
+
+    color: #ffd43b;
+
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.1rem;
+
+    text-shadow: 2px 2px 0 black;
+
+    max-width: 260px;
+
+    box-shadow: 4px 4px 0 #000;
+}
+
+/* Burbuja activa / seleccionada */
+.burbuja.activa .burbujaTexto {
+    border-color: #ff2222;
+    box-shadow: 0 0 0 3px #ff2222, 3px 3px 0 black;
+}
+
+.hacia-izquierda {
+    flex-direction: row-reverse;
+}
+
+.hacia-izquierda .burbujaTexto {
+    margin-left: 0;
+    margin-right: -10px;
+}
+
+/* ==================== BOTÓN MEJORES MOMENTOS ==================== */
+
+.btnMomentos {
+    position: absolute;
+    bottom: 8rem;
+    left: 90px;
+
+    background: #2a8db8;
+    border: 4px solid #000;
+    border-radius: 15px;
+
+    padding: 14px 25px;
+
+    color: #ffd43b;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.4rem;
+
+    text-shadow: 2px 2px 0 black;
+    box-shadow: 4px 4px 0 black;
+}
+
+.btnMomentos i {
+    font-size: 1rem;
+    color: #ff8c00;
+}
+
+.btnMomentos:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 0 black;
+}
+
+.btnMomentos:active {
+    transform: scale(0.97);
+    box-shadow: 2px 2px 0 black;
+}
+
+/* ==================== OVERLAY RESPUESTA ==================== */
+
+.overlayRespuesta {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: none;
+
+    background: transparent;
+}
+
+.overlayRespuesta.visible {
+    display: block;
+}
+
+/* Panel con el texto de respuesta — aparece sobre la burbuja clickeada */
+.panelRespuesta {
+    position: absolute;
+
+    width: 48%;
+    max-width: 700px;
+
+    background: #c7f36d;
+    border: 4px solid #000;
+    border-radius: 20px;
+
+    padding: 20px;
+
+    box-shadow: 4px 4px 0 #000;
+
+    pointer-events: all;
+}
+
+.textoRespuesta {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-align: left;
+
+    color: #ffcc33;
+    -webkit-text-stroke: 0.4px black;
+    text-shadow: 1px 1px 0 black;
+
+    white-space: pre-line;
+}
+
+.panelRespuesta.creador {
+    top: 3%;
+    left: 38%;
+}
+
+.panelRespuesta.familia {
+    top: 28%;
+    left: 5%;
+}
+
+.cerrarRespuesta {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: #ff8c00;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cerrarRespuesta:hover {
+    transform: scale(1.2);
+    color: #ff2222;
+}
+
+/* ==================== OVERLAY VIDEO ==================== */
+
+.overlayVideo {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 20;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlayVideo.visible {
+    display: flex;
+}
+
+.panelVideo {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+}
+
+.videoMomentos {
+    width: 100%;
+    border: 6px solid #b7ff72;
+    border-radius: 12px;
+    box-shadow: 6px 6px 0 black;
+    display: block;
+    background: black;
+}
+
+.cerrarVideo {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+
+    width: 38px;
+    height: 38px;
+
+    background: #ff2222;
+    border: 3px solid black;
+    border-radius: 50%;
+
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 3px 3px 0 black;
+    z-index: 21;
+}
+
+.cerrarVideo:hover {
+    transform: scale(1.15);
+}

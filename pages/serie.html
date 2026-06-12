@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie - Trivia Amarilla</title>
+
+    <link rel="stylesheet" href="../../estilos/style.css">
+    <link rel="stylesheet" href="../../estilos/serie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Fondo Springfield -->
+    <img src="../assets/TRIVIA AMARILLA/3 - SERIE/1- Fondo/3 - Fondo SERIE.jpg" class="fondoSerie" alt="Springfield">
+
+    <!-- Burbuja 1: Creador -->
+    <div class="burbuja" id="burbuja1" style="top: 8%; left: 14%;"
+        data-respuesta="El creador de Los Simpson es Matt Groening, un dibujante, escritor y productor estadounidense nacido en 1954. Ideó a la famosa familia amarilla en 1987 para cortos de televisión, basándose libremente en su propia familia y utilizando una brillante sátira sobre la sociedad estadounidense.">
+        <div class="burbujaIcono">
+            <img src="../assets/TRIVIA AMARILLA/3 - SERIE/2 - Icono/Icono Donas.png" alt="dona">
+        </div>
+        <div class="burbujaTexto">
+            ¿Quién es el creador de The Simpson™?
+        </div>
+    </div>
+
+    <!-- Burbuja 2: Miembros (abre hacia la izquierda porque está a la derecha) -->
+    <div class="burbuja hacia-izquierda" id="burbuja2" style="top: 38%; right: 18%;"
+        data-respuesta="Homero: El padre de familia. Es un hombre obeso, vago, amante de la cerveza Duff, pero de buen corazón.&#10;Marge: La matriarca y esposa de Homero. Es una madre abnegada, paciente, de peinado alto y azul.&#10;Bart: El hijo mayor de 10 años. Es un eterno rebelde, travieso y el clásico 'chico malo' con buen corazón.&#10;Lisa: La hija mediana de 8 años. Es vegetariana, toca el saxofón y destaca por su inteligencia, idealismo y activismo.&#10;Maggie: La bebé de la familia, quien siempre se encuentra chupando su chupete y se comunica mediante gestos.">
+        <div class="burbujaIcono">
+            <img src="../assets/TRIVIA AMARILLA/3 - SERIE/2 - Icono/Icono Donas.png" alt="dona">
+        </div>
+        <div class="burbujaTexto">
+            ¿Quiénes son los miembros de la familia de The Simpson™?
+        </div>
+    </div>
+
+    <!-- Botón Ver mejores momentos — independiente, abajo a la izquierda -->
+    <button class="btnMomentos" id="btnMomentos">
+        <i class="fa-solid fa-play"></i>
+        Ver mejores momentos de la serie
+    </button>
+
+    <!-- Panel respuesta -->
+    <div class="overlayRespuesta" id="overlayRespuesta">
+        <div class="panelRespuesta" id="panelRespuesta">
+            <button class="cerrarRespuesta" id="cerrarRespuesta">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <p class="textoRespuesta" id="textoRespuesta"></p>
+        </div>
+    </div>
+
+    <!-- Panel video -->
+    <div class="overlayVideo" id="overlayVideo">
+        <div class="panelVideo">
+            <button class="cerrarVideo" id="cerrarVideo">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <video id="videoMomentos" class="videoMomentos"
+                src="../assets/TRIVIA AMARILLA/3 - SERIE/video.mp4"
+                controls autoplay>
+            </video>
+        </div>
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="barraInferiorPregunta">
+        <a href="../../menu.html">
+            <button class="btnInferior">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+        </a>
+        <div class="contadorVisitas">
+            <span id="contador">0000</span>
+        </div>
+        <button class="btnInferior" id="btnSonido">
+            <i class="fa-solid fa-volume-xmark"></i>
+        </button>
+    </div>
+
+    <script src="../js/serie.js"></script>
+
+</body>
+
+</html>
