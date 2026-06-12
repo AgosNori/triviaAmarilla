@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.FondoInicio {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.LogoTriviaAmarilla {
+    position: absolute;
+    width: 30rem;
+    top: 5rem;
+    left: 10rem;
+
+}
+
+.btnTrivia {
+    position: absolute;
+    bottom: 220px;
+    left: 20%;
+    /* transform: translateX(0%); */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 40px;
+    background-color: #b7ff72;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    text-transform: uppercase;
+    border: 3px solid black;
+    border-radius: 20px;
+    /* sombra */
+    box-shadow: 5px 5px 0px black;
+    /* contorno del texto */
+    -webkit-text-stroke: 1px black;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(2px);
+    box-shadow: 3px 3px 0px black;
+}
+
+.btn:active {
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px black;
+}
+
+/*Estilos para el menu explicación*/
+.FondoMenuExplicacion {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.LogoMenuExplicacion {
+    position: absolute;
+    width: 30rem;
+    transform: translate(-50%, -50%);
+    top: 16%;
+    left: 50%;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    position: absolute;
+    top: 40%;
+}
+
+/*estilos texto de bienvenida */
+
+.txtBienvenido {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    width: 550px;
+    z-index: 2;
+}
+
+.txtBienvenido p {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    text-align: center;
+
+    color: #ff8c00;
+
+    /* contorno negro */
+    -webkit-text-stroke: 0.4px #000;
+
+    /* sombra estilo cartoon */
+    text-shadow:
+        2px 2px 0 #000;
+
+    letter-spacing: 1px;
+}
+
+/* Estilos barra inferior */
+.barraInferiorMenu {
+    position: absolute;
+    bottom: -100px;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+}
+
+.btnInferior {
+    width: 110px;
+    height: 48px;
+
+    background: #f5e6e6;
+
+    border: 3px solid #dcb6b6;
+
+    border-radius: 12px 8px 14px 10px;
+
+    font-size: 2rem;
+    cursor: pointer;
+
+    box-shadow:
+        2px 2px 0 #dcb6b6,
+        4px 4px 6px rgba(0, 0, 0, .25);
+
+    transition: .2s;
+}
+
+.btnInferior:hover {
+    transform: scale(1.05);
+}
+
+.contadorVisitas {
+    width: 110px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f4e3e3;
+
+    border: 2px solid #d4bcbc;
+    border-radius: 8px;
+
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+}
+
+#contador {
+    font-family: monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8f7ce6;
+    letter-spacing: 5px;
+}
+
+/* estilos para la selección de personajes */
+.seleccionPersonaje {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.personaje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.personaje:hover {
+    transform: translateY(-10px);
+}
+
+.personaje img {
+    width: 20rem;
+    height: auto;
+
+    transition: 0.3s;
+}
+
+.personaje:hover img {
+    transform: scale(1.08);
+}
+
+.barraInferiorPersonaje {
+    position: absolute;
+    bottom: 30px;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+}
+
+
+/* Pregunas BART*/
+/* Fondo */
+.FondoBart {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+/* Pregunta */
+.pregunta {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    width: 60%;
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+
+    color: orange;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 3px 3px 0 black;
+}
+
+/* Opciones */
+.opciones {
+    position: absolute;
+    right: 70px;
+    top: 100px;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.btnOpcion {
+    width: 220px;
+    height: auto;
+    padding: 12px 20px;
+    background: #b7ff72;
+
+    border: 3px solid black;
+    border-radius: 30px;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    box-shadow: 4px 4px 0 black;
+
+    cursor: pointer;
+}
+
+.btnOpcion:hover {
+    transform: scale(1.05);
+}
+
+
+/* Barra inferior */
+.barraInferiorPregunta {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+
+.resultado {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#gifResultado {
+    width: 400px;
+    max-width: 90%;
+}
+
+.contenedorJuego {
+    position: absolute;
+    bottom: 120px;
+    left: 100px;
+
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.vidas {
+    display: flex;
+}
+
+.vida {
+    width: 20rem;
+    height: auto;
+    margin-right: -100px;
+}
+
+.siguienteBtn {
+    display: none;
+
+    background: linear-gradient(to bottom, #ffe45c, #ffb300);
+
+    color: #000;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    padding: 12px 25px;
+
+    border: 4px solid #000;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    box-shadow:
+        4px 4px 0 #000,
+        inset 0 2px 0 rgba(255, 255, 255, .5);
+
+    transition: all .2s ease;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.siguienteBtn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        6px 6px 0 #000,
+        inset 0 2px 0 rgba(255, 255, 255, .5);
+}
+
+.siguienteBtn:active {
+    transform: translateY(2px);
+    box-shadow:
+        2px 2px 0 #000;
+}

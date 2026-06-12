@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Simpsons: Trivia Amarilla</title>
+
+    <link rel="stylesheet" href="../../estilos/style.css">
+</head>
+
+<body>
+
+    <div class="FondoBart">
+        <img src="../../assets/TRIVIA AMARILLA/6 - JUEGO HOMERO/1 - Fondo/6 - Fondo Bart.jpg" class="FondoBart">
+    </div>
+
+    <!-- Pregunta -->
+    <div class="pregunta" id="pregunta">
+        3. ¿Cuál es el superhéroe alter ego de Bart?
+
+    </div>
+
+    <!-- Opciones -->
+    <div class="opciones">
+
+        <button class="btnOpcion" data-correcta="false">
+            El hombre radiactivo
+        </button>
+
+        <button class="btnOpcion" data-correcta="false">
+            El niño Fisión
+        </button>
+
+        <button class="btnOpcion" data-correcta="true">
+            Bartman
+        </button>
+
+        <button class="btnOpcion" data-correcta="false">
+          Tomy y Daly
+        </button>
+
+    </div>
+
+    <!-- Contenedor GIF -->
+    <div id="resultado" style="display:none;">
+        <img id="gifResultado" src="" alt="">
+    </div>
+
+    <!-- Vidas -->
+   <div class="contenedorJuego">
+
+    <div class="vidas" id="vidas"></div>
+
+    <a id="btnSiguiente" href="#">
+        <button class="btnInferior siguienteBtn">
+            SIGUIENTE ➜
+        </button>
+    </a>
+
+</div>
+
+    <a id="btnSiguiente" href="#">
+        <button class="btnInferior siguienteBtn">
+            SIGUIENTE ➜
+        </button>
+    </a>
+    <!-- Barra inferior -->
+    <div class="barraInferiorPregunta">
+
+        <a href="index.html">
+            <button class="btnInferior">
+                ↩
+            </button>
+        </a>
+
+        <div class="contadorVisitas">
+            <span id="contador">0000</span>
+        </div>
+
+        <button class="btnInferior" id="btnSonido">
+            🔇
+        </button>
+
+
+
+    </div>
+
+    <script src="../../app.js"></script>
+
+</body>
+
+</html>
