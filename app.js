@@ -1,202 +1,3 @@
-// /* ==========================
-//    VIDAS
-// ========================== */
-
-// let vidas = localStorage.getItem("vidas");
-
-// if (vidas === null) {
-//     vidas = 3;
-//     localStorage.setItem("vidas", vidas);
-// }
-
-// vidas = parseInt(vidas);
-
-// const contenedorVidas = document.getElementById("vidas");
-
-// function mostrarVidas() {
-
-//     if (!contenedorVidas) return;
-
-//     contenedorVidas.innerHTML = "";
-
-//     for (let i = 0; i < vidas; i++) {
-
-//         const dona = document.createElement("img");
-
-//         dona.src =
-//             "../../assets/TRIVIA AMARILLA/7 - JUEGO BART/2 - Icono/Icono Donas.png";
-
-//         dona.classList.add("vida");
-
-//         contenedorVidas.appendChild(dona);
-//     }
-// }
-
-// mostrarVidas();
-
-// /* ==========================
-//    DETECTAR PREGUNTA ACTUAL
-// ========================== */
-
-// const paginaActual =
-//     window.location.pathname.split("/").pop();
-
-// const numeroPregunta =
-//     parseInt(
-//         paginaActual.match(/\d+/)[0]
-//     );
-
-// let siguientePagina;
-
-// if (numeroPregunta === 6) {
-
-//     siguientePagina = "ganaste.html";
-
-// } else {
-
-//     siguientePagina =
-//         `pregunta${numeroPregunta + 1}.html`;
-// }
-
-// /* ==========================
-//    GIFS
-// ========================== */
-
-// const personaje =
-//     document.body.dataset.personaje;
-
-// let gifCorrecto;
-// let gifIncorrecto;
-
-// switch (personaje) {
-
-//     case "bart":
-//         gifCorrecto =
-//             "../../assets/TRIVIA AMARILLA/7 - JUEGO BART/3 - GIF/7 - BART - GANO.gif";
-
-
-//         gifIncorrecto =
-//             "../../assets/TRIVIA AMARILLA/7 - JUEGO BART/3 - GIF/7 - BART - PERDIO.gif";
-//         break;
-
-//     case "homero":
-//         gifCorrecto =
-//             "../../assets/TRIVIA AMARILLA/8 - JUEGO HOMERO/3 - GIF/8 - HOMERO - GANO.gif";
-
-//         gifIncorrecto =
-//             "../../assets/TRIVIA AMARILLA/8 - JUEGO HOMERO/3 - GIF/8 - HOMERO - ERROR.gif";
-//         break;
-
-//     case "lisa":
-//         gifCorrecto =
-//             "../../assets/TRIVIA AMARILLA/9 - JUEGO LISA/3 - GIF/9 - LISA - GANO.gif";
-
-//         gifIncorrecto =
-//             "../../assets/TRIVIA AMARILLA/9 - JUEGO LISA/3 - GIF/9 - LISA - ERROR.gif";
-//         break;
-
-//     default:
-//         gifCorrecto =
-//             "../../assets/gifs/correcto.gif";
-
-//         gifIncorrecto =
-//             "../../assets/gifs/incorrecto.gif";
-// }
-// /* ==========================
-//    ELEMENTOS HTML
-// ========================== */
-// const pregunta =
-//     document.getElementById("pregunta");
-
-// const botones =
-//     document.querySelectorAll(".btnOpcion");
-
-// const panelResultado =
-//     document.getElementById("panelResultado");
-
-// const textoResultado =
-//     document.getElementById("textoResultado");
-
-// const gifResultado =
-//     document.getElementById("gifResultado");
-
-// const enlaceSiguiente =
-//     document.getElementById("btnSiguiente");
-
-// const botonSiguiente =
-//     document.querySelector(".siguienteBtn");
-
-// /* ==========================
-//    RESPUESTAS
-// ========================== */
-
-// botones.forEach((boton) => {
-
-//     boton.addEventListener("click", () => {
-
-//         // Deshabilitar botones
-//         botones.forEach((b) => {
-//             b.disabled = true;
-//         });
-
-//         const esCorrecta =
-//             boton.dataset.correcta === "true";
-
-//         // Mostrar GIF
-//         pregunta.style.display = "none";
-
-//         panelResultado.style.display = "flex";
-
-//         if (esCorrecta) {
-
-//             boton.style.backgroundColor =
-//                 "#61ff4d";
-
-//             gifResultado.src =
-//                 gifCorrecto;
-
-//             textoResultado.innerHTML =
-//                 "¡CORRECTO!";
-
-//             textoResultado.className =
-//                 "textoResultado correcto";
-//         } else {
-
-//             boton.style.backgroundColor =
-//                 "#ff4d4d";
-
-//             gifResultado.src =
-//                 gifIncorrecto;
-
-//             textoResultado.innerHTML =
-//                 "¡INCORRECTO!";
-
-//             textoResultado.className =
-//                 "textoResultado incorrecto";
-
-//             vidas--;
-
-//             localStorage.setItem(
-//                 "vidas",
-//                 vidas
-//             );
-
-//             mostrarVidas();
-
-//         }
-
-//         // Mostrar botón siguiente
-//         if (enlaceSiguiente) {
-//             enlaceSiguiente.href =
-//                 siguientePagina;
-//         }
-
-//         if (botonSiguiente) {
-//             botonSiguiente.style.display =
-//                 "inline-block";
-//         }
-//     });
-// });
 
 
 /* ==========================
@@ -211,6 +12,9 @@ if (vidas === null) {
 }
 
 vidas = parseInt(vidas);
+if (vidas <= 0) {
+    window.location.href = "../perdiste.html";
+}
 
 const contenedorVidas = document.getElementById("vidas");
 
@@ -225,7 +29,7 @@ function mostrarVidas() {
         const dona = document.createElement("img");
 
         dona.src =
-            "../../assets/TRIVIA AMARILLA/7 - JUEGO BART/2 - Icono/Icono Donas.png";
+            "../../assets/TRIVIAAMARILLA/7 - JUEGO BART/2 - Icono/Icono Donas.png";
 
         dona.classList.add("vida");
 
@@ -254,7 +58,7 @@ const numeroPregunta =
 
 let siguientePagina;
 
-if (numeroPregunta === 6) {
+if (numeroPregunta === 7) {
     // Última pregunta → ganaste
     siguientePagina = "ganaste.html";
 } else {
@@ -275,26 +79,26 @@ switch (personaje) {
 
     case "bart":
         gifCorrecto =
-            "../../assets/TRIVIA AMARILLA/7 - JUEGO BART/3 - GIF/7 - BART - GANO.gif";
+            "../../assets/TRIVIAAMARILLA/7 - JUEGO BART/3 - GIF/7 - BART - GANO.gif";
 
         gifIncorrecto =
-            "../../assets/TRIVIA AMARILLA/7 - JUEGO BART/3 - GIF/7 - BART - PERDIO.gif";
+            "../../assets/TRIVIAAMARILLA/7 - JUEGO BART/3 - GIF/7 - BART - PERDIO.gif";
         break;
 
     case "homero":
         gifCorrecto =
-            "../../assets/TRIVIA AMARILLA/8 - JUEGO HOMERO/3 - GIF/8 - HOMERO - GANO.gif";
+            "../../assets/TRIVIAAMARILLA/6 - JUEGO HOMERO/3 - GIF/6 - Homero - GANO.gif";
 
         gifIncorrecto =
-            "../../assets/TRIVIA AMARILLA/8 - JUEGO HOMERO/3 - GIF/8 - HOMERO - ERROR.gif";
+            "../../assets/TRIVIAAMARILLA/6 - JUEGO HOMERO/3 - GIF/6 - Homero - PERDIO.gif";
         break;
 
     case "lisa":
         gifCorrecto =
-            "../../assets/TRIVIA AMARILLA/9 - JUEGO LISA/3 - GIF/9 - LISA - GANO.gif";
+            "../../assets/TRIVIAAMARILLA/8 - JUEGO LISA/3 - GIF/8 - Lisa - GANO.gif";
 
         gifIncorrecto =
-            "../../assets/TRIVIA AMARILLA/9 - JUEGO LISA/3 - GIF/9 - LISA - ERROR.gif";
+            "../../assets/TRIVIAAMARILLA/8 - JUEGO LISA/3 - GIF/8 - LISA - PERDIO.gif";
         break;
 
     default:
@@ -372,12 +176,12 @@ botones.forEach((boton) => {
             textoResultado.innerHTML = "¡INCORRECTO!";
             textoResultado.className = "textoResultado incorrecto";
 
-            vidas--;
+            vidas = Math.max(0, vidas - 1);
             localStorage.setItem("vidas", vidas);
             mostrarVidas();
 
             // Sin vidas → perdiste
-            if (vidas <= 0) {
+            if (vidas === 0) {
                 siguientePagina = "perdiste.html";
             }
         }
@@ -425,4 +229,14 @@ if (btnSonido) {
 // Lo ponemos acá como función exportable por si se necesita
 function resetearVidas() {
     localStorage.removeItem("vidas");
+}
+
+/* ---------- Contador de visitas ---------- */
+
+const contadorEl = document.getElementById("contador");
+
+if (contadorEl) {
+    let visitas = parseInt(localStorage.getItem("visitas") || "0") + 1;
+    localStorage.setItem("visitas", visitas);
+    contadorEl.textContent = String(visitas).padStart(4, "0");
 }

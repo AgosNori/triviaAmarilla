@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Felicidades! - Trivia Amarilla</title>
+    <title>¡Perdiste! - Trivia Amarilla</title>
 
     <link rel="stylesheet" href="../../estilos/style.css">
-    <link rel="stylesheet" href="../../estilos/felicidades.css">
+    <link rel="stylesheet" href="../../estilos/perdiste.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
@@ -15,31 +15,30 @@
 <body>
 
     <!-- Fondo -->
-    <img src="../../assets/TRIVIAAMARILLA/7 - JUEGO BART/1 - Fondo/6 - Fondo Bart.jpg" class="fondoFelicidades"
+    <img src="../../assets/TRIVIAAMARILLA/8 - JUEGO LISA/1 - Fondo/8 - Lisa.webp" class="fondoPerdiste"
         alt="fondo">
 
 
     <!-- Contenido izquierdo -->
-    <div class="contenidoFelicidades">
+    <div class="contenidoPerdiste">
 
-        <h1 class="tituloFelicidades">¡Felicidades!</h1>
+        <h1 class="tituloPerdiste">¡Perdiste!</h1>
 
-        <p class="textoFelicidades">
-            ¡Respondiste todas las preguntas sobre Bart correctamente!<br>
-            Puedes elegir continuar con los demás personajes o explorar el menú.
+        <p class="textoPerdiste">
+            Te quedaste sin vidas, mejor<br>suerte la próxima.
         </p>
 
         <div class="botonesFinales">
 
-            <a href="../../../../index.html">
-                <button class="btnFinal">
-                    Volver<br>al menú
+            <a href="../lisa/pregunta1.html">
+                <button class="btnFinalPerdiste">
+                    Volver<br>a intentar
                 </button>
             </a>
 
             <a href="../../pages/personajes.html">
-                <button class="btnFinal">
-                    Explorar a<br>los demás personajes
+                <button class="btnFinalPerdiste">
+                    Jugar con<br>otro personaje
                 </button>
             </a>
 
@@ -47,10 +46,9 @@
 
     </div>
 
-    <!-- GIF / Video celebración -->
-    <div class="gifFelicidades">
-        <img src="../../assets/TRIVIAAMARILLA/7 - JUEGO BART/3 - GIF/7 - HOMERO - GANO LA TRIVIA.gif"
-            alt="celebración">
+    <!-- GIF burla -->
+    <div class="gifPerdiste">
+        <img src="../../assets/TRIVIAAMARILLA/7 - JUEGO BART/3 - GIF/7 - Nelson - PERDISTE VIDAS.gif" alt="burla">
     </div>
 
     <!-- Barra inferior -->
@@ -67,7 +65,7 @@
         </div>
 
         <button class="btnInferior" id="btnSonido">
-            <i class="fa-solid fa-volume-high"></i>
+            <i class="fa-solid fa-volume-xmark"></i>
         </button>
 
     </div>
@@ -75,7 +73,6 @@
         localStorage.removeItem("vidas");
     </script>
     <script src="../../app.js"></script>
-
 
 </body>
 

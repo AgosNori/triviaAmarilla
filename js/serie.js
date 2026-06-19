@@ -72,7 +72,9 @@ overlayRespuesta.addEventListener("click", (e) => {
 
 btnMomentos.addEventListener("click", () => {
     overlayVideo.classList.add("visible");
-    videoMomentos.play();
+
+    videoMomentos.src =
+        "https://www.youtube.com/embed/JCt2T4Tzlms?autoplay=1";
 });
 
 cerrarVideo.addEventListener("click", () => {
@@ -92,15 +94,7 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-/* ---------- Contador de visitas ---------- */
 
-const contadorEl = document.getElementById("contador");
-
-if (contadorEl) {
-    let visitas = parseInt(localStorage.getItem("visitas") || "0") + 1;
-    localStorage.setItem("visitas", visitas);
-    contadorEl.textContent = String(visitas).padStart(4, "0");
-}
 
 /* ---------- Sonido ---------- */
 
