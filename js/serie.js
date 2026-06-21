@@ -78,10 +78,24 @@ btnMomentos.addEventListener("click", () => {
 });
 
 cerrarVideo.addEventListener("click", () => {
+    videoMomentos.src = "";
     overlayVideo.classList.remove("visible");
-    videoMomentos.pause();
-    videoMomentos.currentTime = 0;
+
+
 });
+
+// Cerrar con Escape
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        videoMomentos.src = "";
+        overlayRespuesta.classList.remove("visible");
+        overlayVideo.classList.remove("visible");
+        videoMomentos.pause();
+        videoMomentos.currentTime = 0;
+        burbujas.forEach(b => b.classList.remove("activa"));
+    }
+});
+
 
 // Cerrar con Escape
 document.addEventListener("keydown", (e) => {
