@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Simpsons: Trivia Amarilla</title>
+    <link rel="stylesheet" href="../../estilos/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body data-personaje="bonus">
+    <div class="FondoHomero">
+        <img src="../../assets/TRIVIAAMARILLA/11 - JUEGO  TRIVIA AMARILLA PREGUNTA/1 - Fondo/11 - Fondo Pregunta Trivia Amarilla.png"
+            alt="Fondo Bonus" class="FondoBonus">
+    </div>
+    <!-- Pregunta -->
+    <div class="preguntaBonus" id="pregunta">
+        ¿Cuantas letras contiene en total el apellido del personaje de los Simpsons Apu?
+    </div>
+    <div class="panelResultado" id="panelResultado">
+
+        <img id="gifResultado" class="gifResultado" src="" alt="" height="200px">
+
+
+        <div id="textoResultado" class="textoResultado">
+        </div>
+
+    </div>
+
+
+    <!-- Opciones -->
+    <div class="opcionesBonus">
+
+        <button class="btnOpcionB" data-correcta="false">
+            16
+        </button>
+
+        <button class="btnOpcionB" data-correcta="true">
+            18
+        </button>
+
+        <button class="btnOpcionB" data-correcta="false">
+            20
+        </button>
+
+        <button class="btnOpcionB" data-correcta="false">
+            22
+        </button>
+
+    </div>
+
+
+
+    <!-- Vidas -->
+    <div class="contenedorJuego">
+        <!-- Y tambien agregar el reloj de la bebe  -->
+
+        <!-- <div class="vidas" id="vidas"></div> -->
+        <!-- Vamos a tener que modificar la lógica para la vida, porque aca es una sola -->
+        <img class="maguieMinutos"
+            src="../../assets/TRIVIAAMARILLA/11 - JUEGO  TRIVIA AMARILLA PREGUNTA/3 - GIF/Minutero Maggie.gif" />
+        <img src="../../assets/TRIVIAAMARILLA/11 - JUEGO  TRIVIA AMARILLA PREGUNTA/2 - Icono/Icono Donas.png" alt="DonaVida" class="donaBonus">
+
+
+        <a id="btnSiguiente" href="#">
+            <button class=" siguienteBtn">
+                SIGUIENTE ➜
+            </button>
+        </a>
+
+    </div>
+
+
+    <!-- Barra inferior -->
+    <div class="barraInferiorPregunta">
+
+        <a href="../../index.html">
+            <button class="btnInferior">
+                <i class="fa-solid fa-house"></i>
+            </button>
+        </a>
+
+        <div class="contadorVisitas">
+            <span id="contador">0000</span>
+        </div>
+
+        <button class="btnInferior" id="btnSonido">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+
+
+</body>
+<script src="../../app.js"></script>
+
+
+</html>
