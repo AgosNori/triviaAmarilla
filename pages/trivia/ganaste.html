@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Perdiste! - Trivia Amarilla</title>
+
+    <link rel="stylesheet" href="../../estilos/style.css">
+    <link rel="stylesheet" href="../../estilos/perdiste.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Fondo -->
+    <img src="../../assets/TRIVIAAMARILLA/12 - JUEGO TERMINO JUEGO/1 - Fondo/12- Fondo.png" class="fondoSinTiempo" alt="fondo"/>
+
+
+    <!-- Contenido izquierdo -->
+    <div class="contenidoSinTiempo">
+
+        <h1 class="tituloSinTiempo">¡FELICIDADES!</h1>
+
+        <p class="textoST">
+       Respondiste de manera <br/> correcta la pregunta única <br/> de l Trivia Amarilla.
+        </p>
+
+        <div class="botonesFinalesST">
+
+            <a href="../menuExplicacion.html">
+                <button class="btnFinalPerdiste">
+                    Volver<br>al menú
+                </button>
+            </a>
+
+            <a href="reclamarCertificado.html">
+                <button class="btnFinalPerdiste">
+                    Reclamar <br> certificado 
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- GIF burla -->
+    <div class="gifSinTiempo">
+        <img src="../../assets/TRIVIAAMARILLA/12 - JUEGO TERMINO JUEGO/3 - GIF/12 - GANASTE EL JUEGO.png" alt="Gano el juego">
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="barraInferiorPregunta">
+
+        <a href="../../../../index.html">
+            <button class="btnInferior">
+                <i class="fa-solid fa-house"></i>
+            </button>
+        </a>
+
+        <div class="contadorVisitas">
+            <span id="contador">0000</span>
+        </div>
+
+        <button class="btnInferior" id="btnSonido">
+            <i class="fa-solid fa-volume-xmark"></i>
+        </button>
+
+    </div>
+    <script>
+        sessionStorage.removeItem("vidas");
+    </script>
+    <script>
+        window.addEventListener("load", () => {
+            const audio = new Audio(
+                "../../assets/TRIVIAAMARILLA/Sonidos/4 - Sonido Perdedor Todos los caminos Y Trivia Amarilla.mp3"
+            );
+
+            audio.play().catch(() => { });
+        });
+    </script>
+    <script src="../../app.js"></script>
+
+</body>
+
+</html>

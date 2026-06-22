@@ -70,7 +70,16 @@
 
     </div>
     <script>
-        localStorage.removeItem("vidas");
+        sessionStorage.removeItem("vidas");
+    </script>
+    <script>
+        window.addEventListener("load", () => {
+            const audio = new Audio(
+                "../../assets/TRIVIAAMARILLA/Sonidos/4 - Sonido Perdedor Todos los caminos Y Trivia Amarilla.mp3"
+            );
+
+            audio.play().catch(() => { });
+        });
     </script>
     <script src="../../app.js"></script>
 

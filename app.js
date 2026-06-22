@@ -1,14 +1,45 @@
 
+/* ==========================
+   DESBLOQUEAR BONUS
+========================== */
+
+const btnBonus = document.getElementById("btnBONUS");
+
+if (btnBonus) {
+
+    const completados =
+        JSON.parse(
+            sessionStorage.getItem("personajesCompletados")
+        ) || [];
+
+    const desbloqueado =
+        completados.includes("bart") &&
+        completados.includes("homero") &&
+        completados.includes("lisa");
+
+    if (!desbloqueado) {
+
+        btnBonus.disabled = true;
+        btnBonus.innerHTML = "🔒 BONUS";
+        btnBonus.style.opacity = "0.5";
+
+    } else {
+
+        btnBonus.disabled = false;
+        btnBonus.innerHTML = "BONUS";
+        btnBonus.style.opacity = "1";
+    }
+}
 
 /* ==========================
    VIDAS
 ========================== */
 
-let vidas = localStorage.getItem("vidas");
+let vidas = sessionStorage.getItem("vidas");
 
 if (vidas === null) {
     vidas = 3;
-    localStorage.setItem("vidas", vidas);
+    sessionStorage.setItem("vidas", vidas);
 }
 
 vidas = parseInt(vidas);
@@ -74,6 +105,15 @@ const personaje =
 
 let gifCorrecto;
 let gifIncorrecto;
+let sonidoCorrecto = new Audio(
+    "../../assets/TRIVIAAMARILLA/Sonidos/1 - Sonido Boton Correcto.mp3"
+);;
+let sonidoIncorrecto = new Audio(
+    "../../assets/TRIVIAAMARILLA/Sonidos/2 - Sonido Boton Incorrecto.mp3"
+);
+
+let sonidoGanoPersonaje = new Audio("../../assets/TRIVIAAMARILLA/Sonidos/3 - Sonido Ganador Todos Los Caminos.mp3");
+let sonidoPerdioPersonaje = new Audio("../../assets/TRIVIAAMARILLA/Sonidos/4 - Sonido Perdedor Todos los caminos Y Trivia Amarilla.mp3");
 
 switch (personaje) {
 
@@ -153,6 +193,21 @@ botones.forEach((boton) => {
         pregunta.style.display = "none";
         panelResultado.style.display = "flex";
 
+        // if (esCorrecta) {
+
+        //     boton.classList.add("seleccionada-ok");
+
+        //     gifResultado.src = gifCorrecto;
+
+        //     textoResultado.innerHTML = "¡CORRECTO!";
+        //     textoResultado.className = "textoResultado correcto";
+
+        //     // Si era la última pregunta → ganaste
+        //     if (numeroPregunta === 6) {
+        //         siguientePagina = "ganaste.html";
+        //     }
+
+        // } 
         if (esCorrecta) {
 
             boton.classList.add("seleccionada-ok");
@@ -162,12 +217,21 @@ botones.forEach((boton) => {
             textoResultado.innerHTML = "¡CORRECTO!";
             textoResultado.className = "textoResultado correcto";
 
-            // Si era la última pregunta → ganaste
-            if (numeroPregunta === 6) {
-                siguientePagina = "ganaste.html";
+            if (sonidoActivo && sonidoCorrecto) {
+                sonidoCorrecto.currentTime = 0;
+                sonidoCorrecto.play().catch(() => { });
             }
 
-        } else {
+            if (numeroPregunta === 7) {
+                sessionStorage.setItem(
+                    "personajeActual",
+                    personaje
+                );
+                siguientePagina = "ganaste.html";
+
+            }
+        }
+        else {
 
             boton.classList.add("seleccionada-mal");
 
@@ -175,9 +239,12 @@ botones.forEach((boton) => {
 
             textoResultado.innerHTML = "¡INCORRECTO!";
             textoResultado.className = "textoResultado incorrecto";
-
+            if (sonidoActivo && sonidoIncorrecto) {
+                sonidoIncorrecto.currentTime = 0;
+                sonidoIncorrecto.play().catch(() => { });
+            }
             vidas = Math.max(0, vidas - 1);
-            localStorage.setItem("vidas", vidas);
+            sessionStorage.setItem("vidas", vidas);
             mostrarVidas();
 
             // Sin vidas → perdiste
@@ -225,10 +292,10 @@ if (btnSonido) {
 ========================== */
 
 // En ganaste.html y perdiste.html llamar esto:
-// localStorage.removeItem("vidas");
+// sessionStorage.removeItem("vidas");
 // Lo ponemos acá como función exportable por si se necesita
 function resetearVidas() {
-    localStorage.removeItem("vidas");
+    sessionStorage.removeItem("vidas");
 }
 
 /* ---------- Contador de visitas ---------- */
@@ -236,7 +303,9 @@ function resetearVidas() {
 const contadorEl = document.getElementById("contador");
 
 if (contadorEl) {
-    let visitas = parseInt(localStorage.getItem("visitas") || "0") + 1;
-    localStorage.setItem("visitas", visitas);
+    let visitas = parseInt(sessionStorage.getItem("visitas") || "0") + 1;
+    sessionStorage.setItem("visitas", visitas);
     contadorEl.textContent = String(visitas).padStart(4, "0");
 }
+
+

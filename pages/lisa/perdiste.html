@@ -15,8 +15,7 @@
 <body>
 
     <!-- Fondo -->
-    <img src="../../assets/TRIVIAAMARILLA/8 - JUEGO LISA/1 - Fondo/8 - Lisa.webp" class="fondoPerdiste"
-        alt="fondo">
+    <img src="../../assets/TRIVIAAMARILLA/8 - JUEGO LISA/1 - Fondo/8 - Lisa.webp" class="fondoPerdiste" alt="fondo">
 
 
     <!-- Contenido izquierdo -->
@@ -70,7 +69,16 @@
 
     </div>
     <script>
-        localStorage.removeItem("vidas");
+        sessionStorage.removeItem("vidas");
+    </script>
+    <script>
+        window.addEventListener("load", () => {
+            const audio = new Audio(
+                "../../assets/TRIVIAAMARILLA/Sonidos/4 - Sonido Perdedor Todos los caminos Y Trivia Amarilla.mp3"
+            );
+
+            audio.play().catch(() => { });
+        });
     </script>
     <script src="../../app.js"></script>
 

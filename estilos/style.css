@@ -235,7 +235,8 @@
 .FondoBart,
 .FondoHomero,
 .FondoLisa,
-.FondoBonus {
+.FondoBonus,
+.fondoSinTiempo {
     position: absolute;
     width: 100%;
     height: 100vh;
@@ -833,7 +834,6 @@
     line-height: 1.5;
     text-transform: uppercase;
     text-align: left;
-
     color: #ff8c00;
     -webkit-text-stroke: 0.5px black;
     text-shadow: 2px 2px 0 black;
@@ -856,14 +856,14 @@
     border: 4px solid black;
     border-radius: 20px;
 
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 1.2rem;
+    font-family: 'Mango';
+    font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     line-height: 1.3;
-
-    color: white;
+    font-weight: 200;
+    color: #FD7F0E;
     -webkit-text-stroke: 1px black;
     text-shadow: 2px 2px 0 black;
 
@@ -1035,4 +1035,165 @@
     box-shadow: 4px 4px 0 black;
 
     cursor: pointer;
+}
+
+.timerContainer {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #ffd90f;
+    border: 5px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#timer {
+    font-size: 3rem;
+    font-family: 'Simpsons';
+    color: #000;
+}
+
+.contenidoSinTiempo {
+    position: absolute;
+    top: 50%;
+    left: 15rem;
+    transform: translateY(-50%);
+
+    width: 42%;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3rem;
+}
+
+.tituloSinTiempo,
+.textoST {
+    font-family: 'Mango';
+    font-size: 5.5rem;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #ff8c00;
+    -webkit-text-stroke: 4px black;
+    text-shadow: 5px 5px 0 black;
+
+    letter-spacing: 2px;
+}
+
+.textoST {
+    font-size: 2.1rem;
+    font-weight: 300;
+    /* transform: translateX(10%); */
+    /* text-decoration: dashed; */
+    text-align: justify;
+}
+
+.gifSinTiempo {
+    position: absolute;
+    top: 50%;
+    right: 15rem;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    border: 5px solid black;
+    border-radius: 8px;
+    box-shadow: 6px 6px 0 black;
+    overflow: hidden;
+
+    width: 600px;
+    height: 600px;
+    background: black;
+}
+
+.botonesFinalesST {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transform: translateX(20%);
+}
+.gifSinTiempo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+.fondoCertificado {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Columna izquierda */
+.accionesCertificado {
+    position: absolute;
+    left: 20rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    z-index: 2;
+}
+
+/* Botón verde */
+.btnDescargar {
+    width: 230px;
+    height: 90px;
+
+    background: #b7ff72;
+
+    border: 4px solid black;
+    border-radius: 20px;
+
+    font-family: "Mango";
+    font-size: 1.4rem;
+    color: #FD7F0E;
+
+    -webkit-text-stroke: 1px black;
+    text-shadow: 2px 2px 0 black;
+
+    box-shadow: 5px 5px 0 black;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btnDescargar:hover {
+    transform: translateY(-3px);
+    box-shadow: 7px 7px 0 black;
+}
+
+/* Certificado */
+.contenedorCertificado {
+    position: absolute;
+
+    top: 50%;
+    left: 60%;
+
+    transform: translate(-50%, -50%);
+
+    width: 700px;
+
+    border: 5px solid black;
+
+    background: #f8ebac;
+
+    box-shadow: 8px 8px 0 black;
+
+    z-index: 2;
+}
+
+.contenedorCertificado img {
+    width: 100%;
+    display: block;
 }

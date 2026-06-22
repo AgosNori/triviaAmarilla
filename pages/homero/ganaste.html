@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body data-personaje="homero">
 
     <!-- Fondo -->
     <img src="../../assets/TRIVIAAMARILLA/6 - JUEGO HOMERO/3 - GIF/6 - Homero - GANO.gif" class="fondoFelicidades"
@@ -49,8 +49,7 @@
 
     <!-- GIF / Video celebración -->
     <div class="gifFelicidades">
-        <img src="../../assets/TRIVIAAMARILLA/7 - JUEGO BART/3 - GIF/7 - HOMERO - GANO LA TRIVIA.gif"
-            alt="celebración">
+        <img src="../../assets/TRIVIAAMARILLA/7 - JUEGO BART/3 - GIF/7 - HOMERO - GANO LA TRIVIA.gif" alt="celebración">
     </div>
 
     <!-- Barra inferior -->
@@ -72,7 +71,32 @@
 
     </div>
     <script>
-        localStorage.removeItem("vidas");
+        sessionStorage.removeItem("vidas");
+    </script>
+    <script>
+        window.addEventListener("load", () => {
+            const audio = new Audio(
+                "../../assets/TRIVIAAMARILLA/Sonidos/3 - Sonido Ganador Todos Los Caminos.mp3"
+            );
+
+            audio.play().catch(() => { });
+        });
+    </script>
+    <script>
+        const personaje = document.body.dataset.personaje;
+
+        let completados =
+            JSON.parse(sessionStorage.getItem("personajesCompletados")) || [];
+
+        if (!completados.includes(personaje)) {
+
+            completados.push(personaje);
+
+            sessionStorage.setItem(
+                "personajesCompletados",
+                JSON.stringify(completados)
+            );
+        }
     </script>
     <script src="../../app.js"></script>
 
