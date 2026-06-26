@@ -15,7 +15,8 @@
 <body>
 
     <!-- Fondo -->
-    <img src="../../assets/TRIVIAAMARILLA/12 - JUEGO TERMINO JUEGO/1 - Fondo/12- Fondo.png" class="fondoSinTiempo" alt="fondo"/>
+    <img src="../../assets/TRIVIAAMARILLA/12 - JUEGO TERMINO JUEGO/1 - Fondo/12- Fondo.png" class="fondoSinTiempo"
+        alt="fondo" />
 
 
     <!-- Contenido izquierdo -->
@@ -24,7 +25,7 @@
         <h1 class="tituloSinTiempo">¡FELICIDADES!</h1>
 
         <p class="textoST">
-       Respondiste de manera <br/> correcta la pregunta única <br/> de l Trivia Amarilla.
+            Respondiste de manera <br /> correcta la pregunta única <br /> de l Trivia Amarilla.
         </p>
 
         <div class="botonesFinalesST">
@@ -37,7 +38,7 @@
 
             <a href="reclamarCertificado.html">
                 <button class="btnFinalPerdiste">
-                    Reclamar <br> certificado 
+                    Reclamar <br> certificado
                 </button>
             </a>
 
@@ -47,7 +48,8 @@
 
     <!-- GIF burla -->
     <div class="gifSinTiempo">
-        <img src="../../assets/TRIVIAAMARILLA/12 - JUEGO TERMINO JUEGO/3 - GIF/12 - GANASTE EL JUEGO.png" alt="Gano el juego">
+        <img src="../../assets/TRIVIAAMARILLA/12 - JUEGO TERMINO JUEGO/3 - GIF/12 - GANASTE EL JUEGO.png"
+            alt="Gano el juego">
     </div>
 
     <!-- Barra inferior -->
@@ -71,13 +73,28 @@
     <script>
         sessionStorage.removeItem("vidas");
     </script>
-    <script>
-        window.addEventListener("load", () => {
-            const audio = new Audio(
-                "../../assets/TRIVIAAMARILLA/Sonidos/4 - Sonido Perdedor Todos los caminos Y Trivia Amarilla.mp3"
-            );
 
+    <script>
+        let audio;
+        let sonidoActivo = true;
+
+        window.addEventListener("load", () => {
+            audio = new Audio(
+                "../../assets/TRIVIAAMARILLA/Sonidos/5 - Sonido Ganador Trivia Amarilla.mp3"
+            );
             audio.play().catch(() => { });
+        });
+
+        document.getElementById("btnSonido").addEventListener("click", () => {
+            const icono = document.querySelector("#btnSonido i");
+            if (sonidoActivo) {
+                audio.pause();
+                icono.classList.replace("fa-volume-high", "fa-volume-xmark");
+            } else {
+                audio.play();
+                icono.classList.replace("fa-volume-xmark", "fa-volume-high");
+            }
+            sonidoActivo = !sonidoActivo;
         });
     </script>
     <script src="../../app.js"></script>

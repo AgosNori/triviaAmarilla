@@ -15,7 +15,7 @@
 <body data-personaje="homero">
 
     <!-- Fondo -->
-    <img src="../../assets/TRIVIAAMARILLA/6 - JUEGO HOMERO/3 - GIF/6 - Homero - GANO.gif" class="fondoFelicidades"
+    <img src="../../assets/TRIVIAAMARILLA/6 - JUEGO HOMERO/1 - Fondo/1- Fondo Homero.jpg" class="fondoFelicidades"
         alt="fondo">
 
 
@@ -73,13 +73,27 @@
     <script>
         sessionStorage.removeItem("vidas");
     </script>
-    <script>
+     <script>
+        let audio;
+        let sonidoActivo = true;
+
         window.addEventListener("load", () => {
-            const audio = new Audio(
+            audio = new Audio(
                 "../../assets/TRIVIAAMARILLA/Sonidos/3 - Sonido Ganador Todos Los Caminos.mp3"
             );
-
             audio.play().catch(() => { });
+        });
+
+        document.getElementById("btnSonido").addEventListener("click", () => {
+            const icono = document.querySelector("#btnSonido i");
+            if (sonidoActivo) {
+                audio.pause();
+                icono.classList.replace("fa-volume-high", "fa-volume-xmark");
+            } else {
+                audio.play();
+                icono.classList.replace("fa-volume-xmark", "fa-volume-high");
+            }
+            sonidoActivo = !sonidoActivo;
         });
     </script>
     <script>

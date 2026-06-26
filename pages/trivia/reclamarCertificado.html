@@ -25,8 +25,7 @@
             </button>
         </a>
 
-        <a href="../../assets/TRIVIAAMARILLA/12 - JUEGO TERMINO JUEGO/3 - GIF/12 - CERTIFICADO GANADOR.jpg"
-            download="Certificado_Trivia_Amarilla.pdf">
+        <a href="../../assets/TRIVIAAMARILLA/12 - JUEGO TERMINO JUEGO/3 - GIF/12 - CERTIFICADO GANADOR.jpg" download>
             <button class="btnDescargar">
                 DESCARGAR<br>CERTIFICADO
             </button>
@@ -58,7 +57,29 @@
         </button>
 
     </div>
+     <script>
+        let audio;
+        let sonidoActivo = true;
 
+        window.addEventListener("load", () => {
+            audio = new Audio(
+                "../../assets/TRIVIAAMARILLA/Sonidos/5 - Sonido Ganador Trivia Amarilla.mp3"
+            );
+            audio.play().catch(() => { });
+        });
+
+        document.getElementById("btnSonido").addEventListener("click", () => {
+            const icono = document.querySelector("#btnSonido i");
+            if (sonidoActivo) {
+                audio.pause();
+                icono.classList.replace("fa-volume-high", "fa-volume-xmark");
+            } else {
+                audio.play();
+                icono.classList.replace("fa-volume-xmark", "fa-volume-high");
+            }
+            sonidoActivo = !sonidoActivo;
+        });
+    </script>
     <script src="../../app.js"></script>
 
 </body>

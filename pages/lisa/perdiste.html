@@ -72,12 +72,26 @@
         sessionStorage.removeItem("vidas");
     </script>
     <script>
+        let audio;
+        let sonidoActivo = true;
+
         window.addEventListener("load", () => {
-            const audio = new Audio(
+            audio = new Audio(
                 "../../assets/TRIVIAAMARILLA/Sonidos/4 - Sonido Perdedor Todos los caminos Y Trivia Amarilla.mp3"
             );
-
             audio.play().catch(() => { });
+        });
+
+        document.getElementById("btnSonido").addEventListener("click", () => {
+            const icono = document.querySelector("#btnSonido i");
+            if (sonidoActivo) {
+                audio.pause();
+                icono.classList.replace("fa-volume-high", "fa-volume-xmark");
+            } else {
+                audio.play();
+                icono.classList.replace("fa-volume-xmark", "fa-volume-high");
+            }
+            sonidoActivo = !sonidoActivo;
         });
     </script>
     <script src="../../app.js"></script>

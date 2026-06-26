@@ -1,4 +1,3 @@
-
 /* ==========================
    DESBLOQUEAR BONUS
 ========================== */
@@ -199,7 +198,8 @@ botones.forEach((boton) => {
 
         //     gifResultado.src = gifCorrecto;
 
-        //     textoResultado.innerHTML = "¡CORRECTO!";
+        //     textoResultado.innerHTML = "¡COR
+        // RECTO!";
         //     textoResultado.className = "textoResultado correcto";
 
         //     // Si era la última pregunta → ganaste

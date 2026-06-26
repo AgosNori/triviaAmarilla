@@ -15,7 +15,8 @@
 <body>
 
     <!-- Fondo -->
-    <img src="../../assets/TRIVIAAMARILLA/12 - JUEGO TERMINO JUEGO/1 - Fondo/12- Fondo.png" class="fondoSinTiempo" alt="fondo"/>
+    <img src="../../assets/TRIVIAAMARILLA/12 - JUEGO TERMINO JUEGO/1 - Fondo/12- Fondo.png" class="fondoSinTiempo"
+        alt="fondo" />
 
 
     <!-- Contenido izquierdo -->
@@ -24,7 +25,7 @@
         <h1 class="tituloSinTiempo">¡Perdiste!</h1>
 
         <p class="textoST">
-         Respondiste mal la <br/> pregunta única de la <br/> Trivia Amarilla
+            Respondiste mal la <br /> pregunta única de la <br /> Trivia Amarilla
         </p>
 
         <div class="botonesFinalesST">
@@ -71,12 +72,26 @@
         sessionStorage.removeItem("vidas");
     </script>
     <script>
+        let audio;
+        let sonidoActivo = true;
+
         window.addEventListener("load", () => {
-            const audio = new Audio(
+            audio = new Audio(
                 "../../assets/TRIVIAAMARILLA/Sonidos/4 - Sonido Perdedor Todos los caminos Y Trivia Amarilla.mp3"
             );
-
             audio.play().catch(() => { });
+        });
+
+        document.getElementById("btnSonido").addEventListener("click", () => {
+            const icono = document.querySelector("#btnSonido i");
+            if (sonidoActivo) {
+                audio.pause();
+                icono.classList.replace("fa-volume-high", "fa-volume-xmark");
+            } else {
+                audio.play();
+                icono.classList.replace("fa-volume-xmark", "fa-volume-high");
+            }
+            sonidoActivo = !sonidoActivo;
         });
     </script>
     <script src="../../app.js"></script>
