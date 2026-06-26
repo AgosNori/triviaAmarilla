@@ -309,3 +309,14 @@ if (contadorEl) {
 }
 
 
+document.querySelector(".btnDescargar").addEventListener("click", () => {
+
+    const enlace = document.createElement("a");
+
+    enlace.href = "../../assets/TRIVIAAMARILLA/12 - JUEGO TERMINO JUEGO/3 - GIF/12 - CERTIFICADO GANADOR.jpg";
+    enlace.download = "Certificado Trivia Amarilla.jpg";
+
+    document.body.appendChild(enlace);
+    enlace.click();
+    document.body.removeChild(enlace);
+});
